@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!--bootstrap link-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  
+    <!--stylesheet link-->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Weather Dashboard</title>
+</head>
+
+
+<body>
+  <!-- Hero -->
+  <header class="hero">
+    <h1 class="bg-dark text-white text-center mb-0">Weather Dashboard</h1>
+  </header>
+
+  <main>
+
+    <!-- Left pannel -->
+    <div class="row min-vh-100 no-gutters">
+
+      <section class="col-12 col-lg-3 bg-light py-4 mblank-0 d-flex flex-column" id="serach-from">
+        <form class="form-group" id="searchCityForm">
+          <label for="searchCity" class="col col-12">Search for a City</label>
+          <div class="form-check-inline col col-12 px-3">
+
+            <input type="text" class="form-input" id="searchCity" autofocus="true" aria-describedby="searchCity" />
+
+            <button type="submit" class="btn btn-primary" id="searchCityForm">
+              <span class="fas fa-search"></span>
+            </button>
+
+          </div>
+        </form>
+
+        <li class="list-group col col-12 d-none d-lg-block px-3" id="searchedCityLi"></li>
+
+      </section>
+
+      <!-- Right pannel -->
+
+      <section class="col-12 col-lg-9 mt-3 d-flex flex-column px-3" id="display-weather-info">
+        <!-- Left top card -->
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title d-flex align-items-center lead font-weight-bold" style="height: 100px">
+              <span id="cityName">Name of City</span>
+              <span class="px-3" id="currentdate"> MM/DD/YY</span>
+              <img class="weather-icon" id="weatherIconToday" src="">
+              </img>
+            </h2>
+            <p class="card-text">
+              Temperature:
+              <span id="tempToday">--</span>
+            </p>
+            <p class="card-text">
+              Humidity:
+              <span id="humidityToday">--</span>
+            </p>
+            <p class="card-text">
+              Wind Speed:
+              <span id="windSpeedToday">--</span>
+            </p>
+          
+          </div>
+        </div>
+
+        <!-- Left Bottom -->
+        <div class="px-3">
+          <h2 class="card-title d-flex align-items-center lead font-weight-bold mt-3" style="height: 50px">
+            5-Day Forecast [stats]:
+          </h2>
+
+          <div class="row justify-content-between">
+            
+            <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
+              <p class="card-title font-weight-bold" id="Date1">MM/DD/YY</p>
+              <p class="card-text" style="height: 100px">
+                <img class="weather-icon" id="weatherIconDay1" src="">
+                </img>
+              </p>
+              <p class="card-text">Temp:
+                <spanid id="tempDay1">--</span>
+              </p>
+
+              <p class="card-text">Wind:
+                <spanid id="windDay1">--</span>
+              </p>
+
+              <p class="card-text">Humidity:
+                <span id="humidityDay1">--</span>
+              </p>
+            </div>
+            
+            <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
+              <p class="card-title font-weight-bold" id="Date2">MM/DD/YY</p>
+              <p class="card-text" style="height: 100px">
+                <img class="weather-icon" id="weatherIconDay2" src="">
+                </img>
+              </p>
+              <p class="card-text">Temp:
+                <spanid id="tempDay2">--</span>
+              </p>
+              <p class="card-text">Wind:
+                <spanid id="windDay2">--</span>
+              </p>
+              <p class="card-text">Humidity:
+                <span id="humidityDay2">--</span>
+              </p>
+            </div>
+            <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
+              <p class="card-title font-weight-bold" id="Date3">MM/DD/YY</p>
+              <p class="card-text" style="height: 100px">
+                <img class="weather-icon" id="weatherIconDay3" src="">
+                </img>
+              </p>
+              <p class="card-text">Temp:
+                <spanid id="tempDay3">--</span>
+              </p>
+              <p class="card-text">Wind:
+                <spanid id="windDay3">--</span>
+              </p>
+              <p class="card-text">Humidity:
+                <span id="humidityDay3">--</span>
+              </p>
+            </div>
+            <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
+              <p class="card-title font-weight-bold" id="Date4">MM/DD/YY</p>
+              <p class="card-text" style="height: 100px">
+                <img class="weather-icon" id="weatherIconDay4" src="">
+                </img>
+              </p>
+              <p class="card-text">Temp:
+                <spanid id="tempDay4">--</span>
+              </p>
+              <p class="card-text">Wind:
+                <spanid id="windDay4">--</span>
+              </p>
+              <p class="card-text">Humidity:
+                <span id="humidityDay4">--</span>
+              </p>
+            </div>
+            <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
+              <p class="card-title font-weight-bold" id="Date5">MM/DD/YY</p>
+              <p class="card-text" style="height: 100px">
+                <img class="weather-icon" id="weatherIconDay5" src="">
+                </img>
+              </p>
+              <p class="card-text">Temp:
+                <spanid id="tempDay5">--</span>
+              </p>
+              <p class="card-text">Wind:
+                <spanid id="windDay5">--</span>
+              </p>
+              <p class="card-text">Humidity:
+                <span id="humidityDay5">--</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- footer -->
+  <section class="">
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #0a4275;">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: CTA -->
+        <section class="">
+          <p class="d-flex justify-content-center align-items-center">
+            <span class="me-3">Give us your feedback</span>
+            <button onclick="showFeedbackDialog()" type="button" class="btn btn-outline-light btn-rounded">
+              Feedback!
+            </button>
+          </p>
+        </section>
+        <!-- Section: CTA -->
+      </div>
+      <!-- Grid container -->
+  
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        2022-23 Coding Boot Camp</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </section>
+
+  <!--JQuery related script-->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+ 
+  <!--moment function related script-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <!--own script-->
+
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
